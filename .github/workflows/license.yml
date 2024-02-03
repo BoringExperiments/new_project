@@ -21,7 +21,7 @@ env:
 
 jobs:
   process:
-    name: append
+    name: 'append license'
     runs-on: ubuntu-latest
     permissions:
       contents: write
