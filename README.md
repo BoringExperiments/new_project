@@ -6,4 +6,4 @@ Settings for this template:
 * License: Apache 2.0
 * Code of Conduct: Contributor Covenant 2.1
 * CI
- * [addlicense v1.1.1](https://github.com/google/addlicense/releases/tag/v1.1.1)
+  - [addlicense v1.1.1](https://github.com/google/addlicense/releases/tag/v1.1.1)
