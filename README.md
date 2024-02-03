@@ -1,4 +1,4 @@
-# Template for New Project
+# 🚀 Template for New Project
 This repository only contains a template that can be used to create a repository
 for new punExperiment project.
 
