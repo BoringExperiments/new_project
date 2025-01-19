@@ -1,4 +1,4 @@
-# Copyright 2024 punExperiment
+# Copyright 2025 punExperiment
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -23,6 +23,7 @@ jobs:
   process:
     name: 'append license'
     runs-on: ubuntu-latest
+    #runs-on: [debian-12, low-power]
     permissions:
       contents: write
     steps:
@@ -39,6 +40,7 @@ jobs:
           addlicense -c $HOLDER -l $LICENSE .
       - name: Import GPG key
         uses: crazy-max/ghaction-import-gpg@v6
+        if: contains(runner.labels.*, 'debian-12')
         with:
           gpg_private_key: ${{ secrets.COLLISIONBOT_GPG_KEY }}
           passphrase: ${{ secrets.COLLISIONBOT_GPG_PASSPHRASE }}
@@ -46,6 +48,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: 📝 Append license to files
-          commit_user_name: 'License keepers'
+          commit_user_name: 'CollisionBot'
           commit_user_email: pun.experiment@gmail.com
+          commit_author: CollisionBot <pun.experiment@gmail.com>
           commit_options: '--signoff'
